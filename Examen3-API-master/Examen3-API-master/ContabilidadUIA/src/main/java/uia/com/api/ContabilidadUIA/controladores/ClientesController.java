@@ -97,7 +97,7 @@ public class ClientesController {
 	  @RequestMapping(value="clientes/{id}",method = RequestMethod.DELETE)
 	    public  ResponseEntity<List<InfoUIA>> eliminarCliente(@RequestBody InfoUIA newCliente){
 			  System.out.println("Saludos desde eliminarCliente()");
-			  if(clientes.agregaCatalogo(newCliente) == null)
+			  if(clientes.eliminaCatalogo(newCliente) == null)
 				  System.out.println("Error en eliminarCliente()");
 			  return ResponseEntity.ok(clientes.getListaProveedores(misParametros));
 	    }
