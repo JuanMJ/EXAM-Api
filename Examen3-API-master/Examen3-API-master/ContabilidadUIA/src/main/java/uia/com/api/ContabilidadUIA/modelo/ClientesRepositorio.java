@@ -49,7 +49,7 @@ public class ClientesRepositorio {
 		}
 		public InfoUIA eliminarCatalogo(InfoUIA newCliente)   
 		{			
-			return gestorProveedores.agregaCatalogo(newCliente);			
+			return gestorProveedores.eliminaCatalogo(newCliente);			
 		}
 
 
