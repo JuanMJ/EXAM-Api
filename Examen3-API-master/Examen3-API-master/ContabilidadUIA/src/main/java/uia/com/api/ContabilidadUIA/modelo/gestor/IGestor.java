@@ -16,7 +16,7 @@ public interface IGestor {
 	public void setCatalogo(Map<String, InfoUIA> p);
 	public InfoUIA agregaCatalogo(InfoUIA p);
 	public InfoUIA actualizaCatalogo(InfoUIA p);
-	public InfoUIA borrarCatalogo(InfoUIA p);
+	public InfoUIA eliminarCatalogo(InfoUIA p);
 	public IGestor getGestor();
 	public void setGestor(IGestor p);
 	public void salva();

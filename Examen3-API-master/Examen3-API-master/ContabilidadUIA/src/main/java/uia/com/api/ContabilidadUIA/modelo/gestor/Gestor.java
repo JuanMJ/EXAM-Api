@@ -68,7 +68,7 @@ public class Gestor extends AGestor{
 		return null;
 	}
 	@Override
-	public InfoUIA borrarCatalogo(InfoUIA p) {
+	public InfoUIA eliminarCatalogo(InfoUIA p) {
 		// TODO Auto-generated method stub
 		return null;
 	}

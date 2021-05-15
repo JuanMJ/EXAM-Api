@@ -369,7 +369,7 @@ private void carga(String tipo, List<InfoUIA> subCatalogo, InfoUIA newCatalogo)
 		return null;
 	}
 	@Override
-	public InfoUIA actualizaCatalogo(InfoUIA deleteCatalogo) 
+	public InfoUIA actualizaCatalogo(InfoUIA newCatalogo) 
 	{
 		System.out.println(this.gestor.getClass().getSimpleName());
 		
@@ -410,11 +410,11 @@ private void carga(String tipo, List<InfoUIA> subCatalogo, InfoUIA newCatalogo)
 		return null;
 	}
 	@Override
-	public InfoUIA borrarCatalogo(InfoUIA deleteCatalogo) 
+	public InfoUIA eliminarCatalogo(InfoUIA newCatalogo) 
 	{
 		System.out.println(this.gestor.getClass().getSimpleName());
 		
-		String tipo = deleteCatalogo.getType();
+		String tipo = newCatalogo.getType();
 		int i=0;
 		
 		if(this.gestor.getCatalogoMaestro() != null)
@@ -426,8 +426,8 @@ private void carga(String tipo, List<InfoUIA> subCatalogo, InfoUIA newCatalogo)
 				Map.Entry<String, InfoUIA> nodo = (Map.Entry<String, InfoUIA>) tabla.next();
 				if(nodo.getValue().getType().contentEquals(tipo))
 				{
-					this.gestor.getCatalogoMaestro().put(deleteCatalogo.getName(), deleteCatalogo);
-					this.gestor.getListaInfoUIA().agregaCatalogo(deleteCatalogo);
+					this.gestor.getCatalogoMaestro().put(newCatalogo.getName(), newCatalogo);
+					this.gestor.getListaInfoUIA().agregaCatalogo(newCatalogo);
 					this.gestor.salva();
 					if(this.lista != null)
 					{
@@ -436,11 +436,11 @@ private void carga(String tipo, List<InfoUIA> subCatalogo, InfoUIA newCatalogo)
 					}
 					
 					this.Print();
-					return deleteCatalogo;
+					return newCatalogo;
 				}
 				else if(!(this.ancestro.contains("Gestor")))
 				{
-						carga(tipo, nodo.getValue().getItems(), deleteCatalogo);
+						carga(tipo, nodo.getValue().getItems(), newCatalogo);
 				}
 			}
 		}
@@ -450,7 +450,7 @@ private void carga(String tipo, List<InfoUIA> subCatalogo, InfoUIA newCatalogo)
 		}
 		return null;
 	}
-
+	
 
 
 

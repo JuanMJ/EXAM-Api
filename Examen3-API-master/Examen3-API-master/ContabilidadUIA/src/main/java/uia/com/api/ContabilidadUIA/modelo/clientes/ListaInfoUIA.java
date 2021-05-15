@@ -52,5 +52,13 @@ public  class ListaInfoUIA
 			if(this.items != null)
 				this.items.add(newCatalogo);		
 		}
+		public void actualizaCatalogo(InfoUIA newCatalogo) {
+			if(this.items != null)
+				this.items.add(newCatalogo);		
+		}
+		public void eliminarCatalogo(InfoUIA newCatalogo) {
+			if(this.items != null)
+				this.items.add(newCatalogo);		
+		}
 	    
 }

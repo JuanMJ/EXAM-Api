@@ -47,9 +47,9 @@ public class ClientesRepositorio {
 		{			
 			return gestorProveedores.actualizaCatalogo(newCliente);			
 		}
-		public InfoUIA borrarCatalogo(InfoUIA deleteCliente)   
+		public InfoUIA eliminarCatalogo(InfoUIA newCliente)   
 		{			
-			return gestorProveedores.agregaCatalogo(deleteCliente);			
+			return gestorProveedores.agregaCatalogo(newCliente);			
 		}
 
 

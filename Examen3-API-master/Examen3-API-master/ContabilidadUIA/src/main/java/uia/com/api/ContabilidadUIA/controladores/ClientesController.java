@@ -16,7 +16,7 @@ import uia.com.api.ContabilidadUIA.modelo.clientes.InfoUIA;
 
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.PUT,RequestMethod.DELETE})
 
 public class ClientesController {
 	  
@@ -87,20 +87,21 @@ public class ClientesController {
 				  System.out.println("Error en agregaCliente()");
 			  return ResponseEntity.ok(clientes.getListaProveedores(misParametros));
 	    }
-	  @RequestMapping(value="clientes",method = RequestMethod.POST)
-	    public  ResponseEntity<List<InfoUIA>> borrarCliente(@RequestBody InfoUIA newCliente){
+	  @RequestMapping(value="clientes",method = RequestMethod.PUT)
+	    public  ResponseEntity<List<InfoUIA>> actualizaCliente(@RequestBody InfoUIA newCliente){
 			  System.out.println("Saludos desde actualizaCliente()");
 			  if(clientes.agregaCatalogo(newCliente) == null)
 				  System.out.println("Error en actualizaCliente()");
 			  return ResponseEntity.ok(clientes.getListaProveedores(misParametros));
 	    }
-	  @RequestMapping(value="clientes",method = RequestMethod.POST)
-	    public  ResponseEntity<List<InfoUIA>> borrarCliente(@RequestBody InfoUIA deleteCliente){
-			  System.out.println("Saludos desde borrarCliente()");
-			  if(clientes.agregaCatalogo(deleteCliente) == null)
-				  System.out.println("Error en borrarCliente()");
+	  @RequestMapping(value="clientes/{id}",method = RequestMethod.DELETE)
+	    public  ResponseEntity<List<InfoUIA>> eliminarCliente(@RequestBody InfoUIA newCliente){
+			  System.out.println("Saludos desde eliminarCliente()");
+			  if(clientes.agregaCatalogo(newCliente) == null)
+				  System.out.println("Error en eliminarCliente()");
 			  return ResponseEntity.ok(clientes.getListaProveedores(misParametros));
 	    }
+
 
 	  
 	}
